@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './clg_logo.png';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 function App() {
   const [regNo, setRegNo] = useState('');
@@ -11,10 +11,14 @@ function App() {
     setRegNo(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Container className="mt-5">
       <Row className="justify-content-center">
-        <Col className="col-4">
+        <Col xs={12} sm={8} md={6} lg={4}> {/* Adjust the column size for different screen sizes */}
           <Card>
             <Card.Body>
               <div className="text-center mb-4">
@@ -23,7 +27,7 @@ function App() {
               <Card.Title className="text-center mb-4">
                 <strong>Student Login</strong>
               </Card.Title>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formRegNo">
                   <Form.Label><strong>Registration Number:</strong></Form.Label>
                   <Form.Control 
