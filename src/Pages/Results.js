@@ -72,10 +72,10 @@ function Results() {
                 <>
                     <Container className='mt-5'>
                         <Row className='justify-content-center'>
-                            <Col xs={12} sm={12} md={6} lg={8} className='col-12 col-sm-12'>
+                            <Col xs={12} sm={12} md={10} lg={8} className='col-12 col-sm-12'>
                                 <img src={Logo} height={150} width={150} alt='logo' />
                             </Col>
-                            <Col xs={12} sm={12} md={6} lg={8} className='col-12 col-sm-12 mt-4 justify' style={{ fontSize:'21px' }}>
+                            <Col xs={12} sm={12} md={10} lg={8} className='col-12 col-sm-12 mt-4 justify' style={{ fontSize:'21px' }}>
                                 <strong>&emsp;Prathyusha Engineering College</strong>
                                 <br />
                                 <strong style={{fontSize: '14px'}}> &emsp;&emsp;An Autonomous Institution,Tiruvallur</strong>
@@ -161,7 +161,9 @@ function Results() {
                     ></iframe>
 
                     <h3>One Piece is the best Anime in the world</h3>
-                    <button className='btn btn-primary' onClick={() => window.location.href = 'mailto:thestrawhat.yonko@gmail.com'}>Contact Creator</button>
+                    <button className='btn btn-primary' onClick={() => window.location.href = 'mailto:thestrawhat.yonko@gmail.com'}>Contact Creator</button><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <h1>IT IS A PRANK! THE RESULTS SHOWN HERE ARE NOT THE CORRECT.</h1>
+                    <h1>THANK YOU FOR PARTICIPATTING!! </h1>
 
 
 
