@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Table, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Table, Button,Alert } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import Deatils from './details.json';
 import Logo from '../clg_logo.png';
@@ -14,7 +14,7 @@ function Results() {
     const [error, setError] = useState(null);
     const [filteredData, setFilteredData] = useState(null);
     const [showTimer, setShowTimer] = useState(false);
-    const [timer, setTimer] = useState(3);
+    const [timer, setTimer] = useState(30);
     const [prank, setPrank] = useState(true);
     const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -22,6 +22,7 @@ function Results() {
         setShowTimer(true);
         setButtonClicked(true);
     };
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,10 +75,10 @@ function Results() {
                             <Col xs={12} sm={12} md={6} lg={8} className='col-12 col-sm-12'>
                                 <img src={Logo} height={150} width={150} alt='logo' />
                             </Col>
-                            <Col xs={12} sm={12} md={6} lg={8} className='col-12 col-sm-12 mt-4 justify' style={{ fontSize:'30px' }}>
-                                <strong>Prathyusha Engineering College</strong>
+                            <Col xs={12} sm={12} md={6} lg={8} className='col-12 col-sm-12 mt-4 justify' style={{ fontSize:'21px' }}>
+                                <strong>&emsp;Prathyusha Engineering College</strong>
                                 <br />
-                                <strong style={{fontSize: '20px'}}> &emsp;&emsp;An Autonomous Institution,Tiruvallur</strong>
+                                <strong style={{fontSize: '14px'}}> &emsp;&emsp;An Autonomous Institution,Tiruvallur</strong>
                             </Col>
                         </Row>
                     </Container>
@@ -95,14 +96,18 @@ function Results() {
                                             <Table striped bordered hover>
                                                 <thead>
                                                     <tr>
-                                                        <th>Student Name : {Name}</th>
+                                                        <th>Student Name :</th>
+                                                        <th>{Name}</th>
                                                     </tr>
                                                     <tr>
-                                                        <th>Registration Number : {regNo}</th>
-                                                        <th>Semester : VII SEM Only</th>
+                                                        <th>Registration Number :</th>
+                                                        <th>{regNo}</th>
+
                                                     </tr>
                                                     <tr>
                                                         <th>Department : Computer Science and Engineering</th>
+                                                        <th>Semester : VII SEM Only</th>
+
                                                     </tr>
                                                     <tr>
                                                         <th>Subject Code</th>
@@ -131,11 +136,14 @@ function Results() {
                         </Row>
                         <Row className='justify-content-center mb-5'>
                             <Col xs={12} sm={8} md={6} lg={4}>
+                            <Alert severity="success">Click here to get more details</Alert>
+
                                 {buttonClicked ? (
                                     <Button style={{width: "100%"}} className='btn-danger' disabled onClick={handleClick}>Re-check Results</Button>
                                 ) : (
                                     <Button style={{width: "100%"}} className='btn-danger' onClick={handleClick}>Re-check Results</Button>
                                 )}
+
                             </Col>
                         </Row>
                     </Container>
@@ -151,14 +159,21 @@ function Results() {
                         allowFullScreen
                         allow="autoplay"
                     ></iframe>
+
+                    <h3>One Piece is the best Anime in the world</h3>
+                    <button className='btn btn-primary' onClick={() => window.location.href = 'mailto:thestrawhat.yonko@gmail.com'}>Contact Creator</button>
+
+
+
                 </Container>
+                
             )}
 
             {showTimer && (
                 <Container className="mt-3">
                     <Row className="justify-content-center">
                         <Col className="col-8 text-center">
-                            <p>Re-checking Results -> {timer} seconds</p>
+                            <p>Re-checking Results - {timer} seconds</p>
                         </Col>
                     </Row>
                 </Container>
